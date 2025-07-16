@@ -35,6 +35,11 @@
       "identifier": "https://github.com/sylvainherbin/Cosmology",
       "relation": "isSupplementTo",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://sylvainherbin.github.io/",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
     }
   ]
 }
