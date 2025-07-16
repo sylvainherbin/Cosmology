@@ -1,0 +1,40 @@
+{
+  "creators": [
+    {
+      "name": "Herbin, Sylvain",
+      "orcid": "0009-0001-3390-5012",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "title": "Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model",
+  "description": "This repository contains the LaTeX source and compiled PDF for the research paper 'Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model'. The work introduces a fractal cosmological framework where the golden ratio dynamically evolves, resolving the Hubble tension and explaining CMB anomalies through scale-dependent fractal dimensions. Key predictions include BAO deviations, CMB power deficit at low multipoles, and redshift-dependent growth.",
+  "keywords": [
+    "cosmology",
+    "fractal",
+    "golden ratio",
+    "Hubble tension",
+    "CMB anomalies",
+    "Fibonacci",
+    "astrophysics",
+    "theoretical physics"
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "license": {
+    "id": "CC-BY-4.0"
+  },
+  "access_right": "open",
+  "language": "eng",
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/sylvainherbin/Cosmology",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
