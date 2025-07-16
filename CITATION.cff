@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+authors:
+  - family-names: "Herbin"
+    given-names: "Sylvain"
+    orcid: "https://orcid.org/0009-0001-3390-5012"
+    affiliation: "Independent Researcher"
+title: "Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model"
+version: "1.0.0" # This should match your first GitHub Release tag, e.g., v1.0.0
+date-released: "2025-07-16" # Current date, will be updated with subsequent releases
+keywords:
+  - "cosmology"
+  - "fractal"
+  - "golden ratio"
+  - "Hubble tension"
+  - "CMB anomalies"
+  - "Fibonacci"
+  - "astrophysics"
+  - "theoretical physics"
+license: "CC-BY-4.0"
+type: "software" # Or "dataset" or "paper", "software" is common for code repositories
+# url: "https://github.com/sylvainherbin/Cosmology" # Optional, GitHub automatically infers this
