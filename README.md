@@ -21,6 +21,7 @@ This repository is structured as follows:
 * **`Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model.pdf`**: The compiled PDF version of the research paper.
 * **`.zenodo.json`**: A configuration file for Zenodo, specifying metadata for automated archiving and DOI assignment.
 * **`CITATION.cff`**: A Citation File Format file, providing citation metadata for this repository.
+* **`LICENSE.md`**: A CC BY 4.0 license
 
 ---
 
