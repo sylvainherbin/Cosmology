@@ -7,7 +7,8 @@
     }
   ],
   "title": "Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model",
-  "description": "This repository contains the LaTeX source and compiled PDF for the research paper 'Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model'. The work introduces a fractal cosmological framework where the golden ratio dynamically evolves, resolving the Hubble tension and explaining CMB anomalies through scale-dependent fractal dimensions. Key predictions include BAO deviations, CMB power deficit at low multipoles, and redshift-dependent growth.",
+  "version": "v1.1.0",
+  "description": "This repository contains the LaTeX source and compiled PDF for the research paper 'Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model'. We present a complete fractal cosmological framework where the golden ratio phi evolves dynamically from primordial (phi_0=1.5) to modern (phi_inf=1.618) epochs. This phase transition, characterized by a very slow rate parameter Gamma=0.001 (derived from SNIa data), explains CMB anomalies through scale-dependent fractal dimensions and offers a compelling resolution to the Hubble tension. Crucially, the model demonstrates an excellent fit to Pantheon+ Supernovae Type Ia data, yielding a chi^2/dof approx 0.98, comparable to the standard LambdaCDM model, with a best-fit Hubble constant of H0 = 70.00 km/s/Mpc. The model predicts: (1) BAO deviations Delta r_d/r_d approx 0.15(1-e^{-z/2}), (2) CMB power deficit S=0.93 +/- 0.02 at ell<30 (chi^2/dof=1.72 vs 5.40 for static fractal model with phi=1.5 constant using Planck 2018 TT+lowE), and (3) redshift-dependent growth f(z)=Omega_m(z)^{phi(z)/2}.",
   "keywords": [
     "cosmology",
     "fractal",
@@ -16,7 +17,10 @@
     "CMB anomalies",
     "Fibonacci",
     "astrophysics",
-    "theoretical physics"
+    "theoretical physics",
+    "supernovae",
+    "Pantheon+",
+    "cosmic expansion"
   ],
   "upload_type": "publication",
   "publication_type": "preprint",
@@ -37,7 +41,7 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://sylvainherbin.github.io/",
+      "identifier": "https://sylvainherbin.github.io/cosmo/",
       "relation": "isDerivedFrom",
       "scheme": "url"
     }
