@@ -1,0 +1,76 @@
+# LaTeX files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.log
+*.lof
+*.lot
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.gz
+*.xdv
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex(busy)
+*.upa
+*.upb
+*.idx
+*.ind
+*.ilg
+*.upa
+*.upb
+*.loc
+*.gz
+*.xdv
+*.mtc
+*.maf
+*.mlf
+*.mw
+*.tdo
+*.run.xml
+*.spl
+*.sta
+*.glg
+*.glo
+*.gls
+*.ist
+*.xdy
+*.pyg
+
+# Compiled PDF (if generated from LaTeX)
+# Uncomment the line below if you generate the PDF and want to ignore it
+# main.pdf
+
+# Python files
+*.pyc
+__pycache__/
+.Python
+.venv/
+venv/
+env/
+pip-log.txt
+pip-delete-this-arg.txt
+
+# Editor specific files
+*~
+*.bak
+*.swp
+.DS_Store # macOS
+Thumbs.db # Windows
+.vscode/ # Visual Studio Code settings (optional, if you don't want to share them)
+
+# Other common temporary files
+*.tmp
+*.temp
+*.obj
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
