@@ -1,13 +1,13 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite it as below."
+message: "If you use this work, please cite it as below."
 authors:
   - family-names: "Herbin"
     given-names: "Sylvain"
     orcid: "https://orcid.org/0009-0001-3390-5012"
     affiliation: "Independent Researcher"
 title: "Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model"
-version: "1.0.0" # This should match your first GitHub Release tag, e.g., v1.0.0
-date-released: "2025-07-16" # Current date, will be updated with subsequent releases
+version: "v1.1.0"
+date-released: "2025-07-17"
 keywords:
   - "cosmology"
   - "fractal"
@@ -17,6 +17,10 @@ keywords:
   - "Fibonacci"
   - "astrophysics"
   - "theoretical physics"
+  - "supernovae"
+  - "Pantheon+"
+  - "cosmic expansion"
 license: "CC-BY-4.0"
-type: "software" # Or "dataset" or "paper", "software" is common for code repositories
+type: "paper" # Changed from "software" to "paper" as it's a research publication
+doi: "10.5281/zenodo.15973541" # Added your Zenodo DOI
 # url: "https://github.com/sylvainherbin/Cosmology" # Optional, GitHub automatically infers this
