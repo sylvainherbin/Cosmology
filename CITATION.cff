@@ -22,5 +22,5 @@ keywords:
   - "cosmic expansion"
 license: "CC-BY-4.0"
 type: "paper" # Changed from "software" to "paper" as it's a research publication
-doi: "10.5281/zenodo.15973541" # Added your Zenodo DOI
+doi: "https://doi.org/10.5281/zenodo.15973540" # Added your Zenodo DOI
 # url: "https://github.com/sylvainherbin/Cosmology" # Optional, GitHub automatically infers this
