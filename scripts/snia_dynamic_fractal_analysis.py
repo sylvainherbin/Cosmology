@@ -1,4 +1,4 @@
-# Script Python pour l'Analyse des Données SNIa (Google Colab)
+# Script Python pour l'Analyse des Données SNIa 
 # Inclus le chargement de la matrice de covariance complète et le calcul des incertitudes sur les paramètres
 
 import numpy as np
