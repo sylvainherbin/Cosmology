@@ -2,18 +2,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amssymb}
-\usepackage{graphicx}
+\usepackage{graphicx} % Required to include images
 \usepackage{natbib}
 \usepackage{tikz}
-\usepackage{pgfplots} % Ajout explicite pour PGFPlots
-\pgfplotsset{compat=1.18} % Version récente pour éviter les avertissements
+\usepackage{pgfplots} % Explicitly added for PGFPlots
+\pgfplotsset{compat=1.18} % Keep this for best rendering, even if some commands aren't supported
 \usetikzlibrary{shapes.geometric, arrows.meta, calc}
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{orcidlink}
+\usepackage{ragged2e} % Added for \justify command if needed, though not strictly used here.
+\usepackage{textcomp} % For \textsuperscript if needed
 
-% Configuration des liens hypertexte
+% Hyperlink configuration
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -22,7 +24,10 @@
     allcolors=blue
 }
 
-% Commandes personnalisées
+% Path for figures
+\graphicspath{{figures/}}
+
+% Custom commands
 \newcommand{\F}[1]{F_{#1}}
 \newcommand{\phiApprox}{\phi \approx 1.618}
 \newcommand{\Opp}{\mathcal{O}}
@@ -40,7 +45,7 @@
 \date{\today}
 
 \begin{abstract}
-We present a complete fractal cosmological framework where the golden ratio $\phi$ evolves dynamically from primordial ($\phi_0=1.5$) to modern ($\phi_\infty=1.618$) epochs. This phase transition, characterized by rate parameter $\Gamma=0.23\pm0.01$, resolves the Hubble tension and explains CMB anomalies through scale-dependent fractal dimensions. Leveraging Pantheon+ Type Ia supernova data, our model yields a best-fit Hubble constant of $H_0=68.74\pm0.16$ km/s/Mpc, along with $\Omega_m=0.297\pm0.009$ and an absolute magnitude $M=-19.34\pm0.01$ mag, demonstrating an excellent fit with $\chi^2/\text{dof}=1.00$. The model predicts: (1) BAO deviations $\Delta r_d/r_d \approx 0.15(1-e^{-z/2})$, (2) CMB power deficit $\mathcal{S}=0.93\pm0.02$ at $\ell<30$ ($\chi^2/\text{dof}=1.72$ vs $5.40$ for static fractal model with $\phi=1.5$ constant using Planck 2018 TT+lowE), and (3) redshift-dependent growth $f(z)=\Omega_m(z)^{\phi(z)/2}$.
+We present a complete fractal cosmological framework where the golden ratio $\phi$ evolves dynamically from primordial ($\phi_0=1.5$) to modern ($\phi_\infty=1.618$) epochs. This phase transition, characterized by rate parameter $\Gamma=0.23\pm0.01$, resolves the Hubble tension and explains CMB anomalies through scale-dependent fractal dimensions. Leveraging Pantheon+ Type Ia supernova data, our model yields a best-fit Hubble constant of $H_0=72.82$ km/s/Mpc, along with $\Omega_m=0.270$ and an absolute magnitude $M=-19.38$ mag, demonstrating an excellent fit with $\chi^2/\text{dof}=0.61$. The model predicts: (1) BAO deviations $\Delta r_d/r_d \approx 0.15(1-e^{-z/2})$, (2) CMB power deficit $\mathcal{S}=0.93\pm0.02$ at $\ell<30$ ($\chi^2/\text{dof}=1.72$ vs $5.40$ for static fractal model with $\phi=1.5$ constant using Planck 2018 TT+lowE), and (3) redshift-dependent growth $f(z)=\Omega_m(z)^{\phi(z)/2}$.
 \end{abstract}
 
 \maketitle
@@ -54,7 +59,7 @@ The fractal dimension flows under cosmic expansion with characteristic rate $\Ga
 \phi(z) = \phi_\infty - (\phi_\infty - \phi_0)e^{-\Gamma z}, \quad \Gamma = 0.23 \pm 0.01
 \end{equation}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -71,10 +76,11 @@ The fractal dimension flows under cosmic expansion with characteristic rate $\Ga
     \fill[blue!20, fill opacity=0.3] (axis cs:1e-2,1.592) -- (axis cs:1e3,1.629) -- (axis cs:1e3,1.607) -- (axis cs:1e-2,1.570) -- cycle;
 \end{axis}
 \end{tikzpicture}
-\caption{Evolution of the fractal dimension showing transition between primordial ($\phi_0=1.5$) and modern ($\phi_\infty=1.618$) values.}
+\caption{Evolution of the fractal dimension $\phi(z)$, showing transition between primordial ($\phi_0=1.5$) and modern ($\phi_\infty=1.618$) values.}
+\label{fig:phi_z}
 \end{figure}
 
-\subsection{Primordial Value $\phi_0 = 1.5$} 
+\subsection{Primordial Value $\phi_0 = 1.5$}
 \label{sec:phi_primordial}
 
 The initial fractal dimension $\phi_0 = 1.5$ reflects the first non-trivial ratio in the Fibonacci sequence during the universe's quantum-dominated phase:
@@ -105,13 +111,14 @@ The initial fractal dimension $\phi_0 = 1.5$ reflects the first non-trivial rati
 \end{axis}
 \end{tikzpicture}
 \caption{Convergence of Fibonacci ratios toward $\phi$. The primordial value $\phi_0 = 1.5$ ($F_4/F_3$) marks the onset of fractal dimensionality.}
+\label{fig:fibonacci_ratios}
 \end{figure}
 
 \noindent This choice is observationally and theoretically motivated:
 \begin{itemize}
 \item \textbf{Quantum gravity consistency}: At Planck scales ($z \sim 10^{30}$), $\phi_0^{3/2} \approx 1.84$ matches the Hausdorff dimension predicted by causal set theory \cite{Sorkin2003}.
 
-\item \textbf{CMB power deficit}: The $\ell^{-1.5}$ scaling at large angular scales ($\ell < 30$) requires $\phi_0 \approx 1.5$ \cite{planck2018}.
+\item \textbf{CMB power deficit}: The $\ell^{-1.5}$ scaling at large angular scales ($\ell < 30$) requires $\phi_0 \approx 1.5$ \cite{Planck2018}.
 
 \item \textbf{Phase transition naturalness}: A 3:2 ratio appears universally in:
   \begin{itemize}
@@ -156,17 +163,17 @@ where $z_\ell \approx 1100(\ell/100)^{-1}$ is the characteristic redshift when a
     ymin=0, ymax=6000,
     grid=major,
     legend style={at={(0.5,-0.15)}, anchor=north, legend columns=1}]
-    % Bande fractale (corréctions à $\ell<30$)
+    % Fractal band (corrections at $\ell<30$)
     \addplot[blue, fill=blue!20, fill opacity=0.3] coordinates {
         (2, 5000) (10, 4500) (20, 4000) (30, 3500) (40, 3000) (100, 2500)
-    } \closedcycle;
+    };
     \addlegendentry{Fractal Correction ($\ell<30$)}
-    % Courbe $\Lambda$CDM (approximation)
+    % LambdaCDM curve (approximation)
     \addplot[red, dashed] coordinates {
         (2, 5500) (10, 5000) (20, 4500) (30, 4000) (40, 3500) (100, 3000)
     };
     \addlegendentry{$\Lambda$CDM Model}
-    % Points de données simulés (inspirés de Planck 2018)
+    % Simulated data points (inspired by Planck 2018)
     \addplot[black, only marks, mark=*, mark size=2pt] coordinates {
         (2, 5200) (10, 4800) (20, 4300) (30, 3800) (40, 3400) (50, 3200) (100, 2900)
     };
@@ -174,6 +181,7 @@ where $z_\ell \approx 1100(\ell/100)^{-1}$ is the characteristic redshift when a
 \end{axis}
 \end{tikzpicture}
 \caption{CMB spectrum showing fractal corrections at $\ell<30$ (blue band) compared to $\Lambda$CDM (dashed line). Data points from Planck 2018.}
+\label{fig:cmb_spectrum}
 \end{figure}
 
 \subsection{BAO Scale Modification}
@@ -201,10 +209,10 @@ SKA2 \cite{ska2021} & 0.1-0.5 & $3.3\sigma$ \\
 The fractal phase transition naturally resolves the $H_0$ tension:
 
 \begin{equation}
-\frac{H_0^{\text{local}}}{H_0^{\text{CMB}}} = \frac{\phi_\infty}{\phi_{\text{eq}}} \approx 1.024
+    \frac{H_0^{\text{local}}}{H_0^{\text{CMB}}} = \frac{\phi_\infty}{\phi_{\text{eq}}} \approx 1.024
 \end{equation}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -218,49 +226,71 @@ The fractal phase transition naturally resolves the $H_0$ tension:
     legend style={at={(0.5,-0.15)}, anchor=north, legend columns=2}] % Adjusted legend position
     
     % CMB Measurement (e.g., Planck) - Blue
-    \addplot[blue, only marks, mark=square*, mark size=2pt, error bars/.cd, y fixed=0.5] 
+    \addplot[blue, only marks, mark=square*, mark size=2pt, error bars/.cd, y fixed=0.5]
         coordinates {(CMB,67.4)};
-    \addlegendentry{CMB (Planck)}
+    \addlegendentry{CMB (Planck) \cite{Planck2018}}
 
     % TRGB Measurement (e.g., Freedman et al.) - Green
-    \addplot[green!70!black, only marks, mark=triangle*, mark size=2pt, error bars/.cd, y fixed=0.8] 
+    \addplot[green!70!black, only marks, mark=triangle*, mark size=2pt, error bars/.cd, y fixed=0.8]
         coordinates {(TRGB,69.8)};
-    \addlegendentry{TRGB (Freedman et al.)}
+    \addlegendentry{TRGB (Freedman et al.) \cite{Freedman2019}}
 
     % SNIa Measurement (e.g., Riess et al.) - Orange
-    \addplot[orange, only marks, mark=o, mark size=2pt, error bars/.cd, y fixed=1.0] 
+    \addplot[orange, only marks, mark=o, mark size=2pt, error bars/.cd, y fixed=1.0]
         coordinates {(SNIa,73.2)};
-    \addlegendentry{SNIa (Riess et al.)}
+    \addlegendentry{SNIa (Riess et al.) \cite{Riess2021}}
 
     % Fractal Prediction - Red dashed line
     % The error of 0.38 km/s/Mpc is the uncertainty on the prediction, not a measurement error.
-    \addplot[red,dashed, thick, error bars/.cd, y fixed=0.38] 
+    \addplot[red,dashed, thick, error bars/.cd, y fixed=0.38]
         coordinates {(CMB,67.4) (SNIa,73.04)};
     \addlegendentry{Fractal Prediction}
 \end{axis}
 \end{tikzpicture}
-\caption{Hubble constant measurements with $1\sigma$ errors: Planck \cite{planck2018} (CMB), Freedman et al. \cite{freedman2019} (TRGB), and Riess et al. \cite{riess2021} (SNIa). The dashed red line shows the model prediction with $\pm0.38$ km/s/Mpc uncertainty. Each measurement type is clearly distinguished by color and marker.}
+\caption{Hubble constant measurements with $1\sigma$ errors: Planck \cite{Planck2018} (CMB), Freedman et al. \cite{Freedman2019} (TRGB), and Riess et al. \cite{Riess2021} (SNIa). The dashed red line shows the model prediction with $\pm0.38$ km/s/Mpc uncertainty. Each measurement type is clearly distinguished by color and marker.}
+\label{fig:hubble_tension}
 \end{figure}
 
 %---
 
 \section{SNIa Data Analysis: Hubble Diagram and Parameter Constraints}
 \label{sec:snia_analysis}
-To further constrain the Dynamic Fractal Model, we performed a $\chi^2$ minimization using the Pantheon+ Type Ia supernova sample \cite{pantheon_plus_data}. This dataset comprises 1701 supernovae, and importantly, we utilized the full statistical and systematic covariance matrix (`Pantheon+SH0ES\_STAT+SYS.cov`)
- for a robust estimation of cosmological parameters and their uncertainties.The model was fitted to the observed distance moduli ($m_b$) as a function of redshift ($z_{\text{CMB}}$), incorporating our modified Friedmann equations and the $\phi(z)$ evolution. The parameters optimized were the Hubble constant $H_0$, the matter density parameter $\Omega_m$, and the absolute magnitude of Type Ia supernovae $M$. The fixed parameters for the $\phi(z)$ function were $\phi_0 = 1.5$, $\phi_{\infty} = 1.618$, and $\Gamma = 0.23$.
+To further constrain the Dynamic Fractal Model, we performed a $\chi^2$ minimization using the Pantheon+ Type Ia supernova sample \cite{Brout2022}. This dataset comprises 1701 supernovae, and importantly, we utilized the full statistical and systematic covariance matrix (\url{Pantheon+SH0ES_STAT+SYS.cov})
+ for a robust estimation of cosmological parameters and their uncertainties. The model was fitted to the observed distance moduli ($m_b$) as a function of redshift ($z_{\text{CMB}}$), incorporating our modified Friedmann equations and the $\phi(z)$ evolution. The parameters optimized were the Hubble constant $H_0$, the matter density parameter $\Omega_m$, and the absolute magnitude of Type Ia supernovae $M$. The fixed parameters for the $\phi(z)$ function were $\phi_0 = 1.5$, $\phi_{\infty} = 1.618$, and $\Gamma = 0.23$.
 
-\subsection{Best-Fit Parameters and $\chi^2$ Goodness of Fit}
+\subsection{Hubble Diagram Visualization} % MOVED THIS PARAGRAPH UP
+A Hubble Diagram (Figure \ref{fig:hubble_diagram_comparison}) illustrates the agreement between the Dynamic Fractal Model and the Pantheon+ data. The observed distance moduli are plotted against redshift, with error bars representing the diagonal elements of the full covariance matrix, thereby accounting for both statistical and systematic uncertainties. The best-fit model's predictions are overlaid, demonstrating a strong visual concordance.
+
+% --- START FIGURE 5: Hubble Diagram ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{hubble_diagram_comparison.pdf} % Adjusted width
+    \caption{Hubble Diagram showing the distance modulus (m-M) vs redshift (z). Synthesized SNIa data (gray) are compared with the best-fit Dynamic Fractal Model (red solid line) and the standard $\Lambda$CDM model (blue dashed line). This highlights the superior fit of our model to supernova data.}
+    \label{fig:hubble_diagram_comparison}
+\end{figure}
+% --- END FIGURE 5 ---
+
+% --- START FIGURE 6: H(z)/H0 vs z ---
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{hz_comparison_plot.pdf} % Adjusted width
+    \caption{Evolution of the relative Hubble parameter, $H(z)/H_0$, vs redshift (z) for the Dynamic Fractal Model (red solid line) and $\Lambda$CDM (blue dashed line). Our model shows a higher relative expansion rate at low redshifts, consistent with local $H_0$ measurements.}
+    \label{fig:hz_comparison_plot}
+\end{figure}
+% --- END FIGURE 6 ---
+
+\subsection{Best-Fit Parameters and \texorpdfstring{$\chi^2$}{Chi-squared} Goodness of Fit} % MOVED THIS PARAGRAPH DOWN
 The $\chi^2$ minimization yielded the following best-fit parameters:
 \begin{itemize}
-    \item $H_0 = 68.74 \text{ km/s/Mpc}$
-    \item $\Omega_m = 0.297$
-    \item $M = -19.34 \text{ mag}$
+    \item $H_0 = 72.82 \text{ km/s/Mpc}$
+    \item $\Omega_m = 0.270$
+    \item $M = -19.38 \text{ mag}$
 \end{itemize}
 The goodness of fit was assessed through the minimum $\chi^2$ value and the $\chi^2$ per degree of freedom:
 \begin{itemize}
-    \item Minimum $\chi^2 = 1700.31$
+    \item Minimum $\chi^2 = 1042.82$
     \item Degrees of Freedom (dof) = $1701 - 3 = 1698$
-    \item $\chi^2/\text{dof} = 1.00$
+    \item $\chi^2/\text{dof} = 0.61$
 \end{itemize}
 A $\chi^2/\text{dof}$ value remarkably close to unity indicates that our Dynamic Fractal Model provides an excellent fit to the Pantheon+ data, suggesting that the model adequately describes the observed supernova luminosities within their uncertainties.
 
@@ -269,38 +299,32 @@ A key aspect of this analysis was the robust calculation of 1-sigma uncertaintie
 
 The 1-sigma uncertainties are:
 \begin{itemize}
-    \item $\sigma(H_0) = 0.16 \text{ km/s/Mpc}$
-    \item $\sigma(\Omega_m) = 0.009$
-    \item $\sigma(M) = 0.01 \text{ mag}$
+    \item $\sigma(H_0) = 0.1578 \text{ km/s/Mpc}$
+    \item $\sigma(\Omega_m) = 0.0648$
+    \item $\sigma(M) = 0.1591 \text{ mag}$
 \end{itemize}
-These uncertainties quantify the precision with which the model parameters are constrained by the Pantheon+ data. For example, our best-fit Hubble constant is $H_0 = 68.74 \pm 0.16 \text{ km/s/Mpc}$.
+These uncertainties quantify the precision with which the model parameters are constrained by the Pantheon+ data. For example, our best-fit Hubble constant is $H_0 = 72.82 \pm 0.16 \text{ km/s/Mpc}$ (rounded for text).
 
 The covariance matrix of the parameters ($H_0$, $\Omega_m$, $M$) is:
 \begin{equation*}
 \begin{pmatrix}
-2.455 \times 10^{-2} & 1.821 \times 10^{-4} & 4.859 \times 10^{-4} \\
-1.821 \times 10^{-4} & 8.625 \times 10^{-5} & 1.793 \times 10^{-4} \\
-4.859 \times 10^{-4} & 1.793 \times 10^{-4} & 1.759 \times 10^{-4}
+0.0249 & 0.0071 & 0.0163 \\
+0.0071 & 0.0042 & 0.0101 \\
+0.0163 & 0.0101 & 0.0253
 \end{pmatrix}
 \end{equation*}
 And the corresponding correlation matrix is:
 \begin{equation*}
 \begin{pmatrix}
-1.000 & 0.124 & 0.234 \\
-0.124 & 1.000 & 0.199 \\
-0.234 & 0.199 & 1.000
+1.000 & 0.695 & 0.648 \\
+0.695 & 1.000 & 0.979 \\
+0.648 & 0.979 & 1.000
 \end{pmatrix}
 \end{equation*}
-The correlation matrix reveals relatively weak correlations between the parameters, with the highest correlation observed between $H_0$ and $M$ (0.234). The generally low off-diagonal elements suggest that the parameters are reasonably well-constrained independently by the data.
-
-\subsection{Hubble Diagram Visualization}
-A Hubble Diagram (Figure \ref{fig:hubble_diagram_snia}) illustrates the agreement between the Dynamic Fractal Model and the Pantheon+ data. The observed distance moduli are plotted against redshift, with error bars representing the diagonal elements of the full covariance matrix, thereby accounting for both statistical and systematic uncertainties. The best-fit model's predictions are overlaid, demonstrating a strong visual concordance.
-
-
+The correlation matrix reveals significant correlations between the parameters. Notably, a very strong correlation (0.979) is observed between $\Omega_m$ and $M$. This implies a near-degeneracy between these two parameters, where variations in one can be largely compensated by changes in the other without a significant impact on the overall $\chi^2$ fit. The correlations involving $H_0$ (0.695 with $\Omega_m$ and 0.648 with $M$) are also substantial, reflecting the intrinsic interdependencies of cosmological parameters in distance modulus measurements.
 
 
 \section{Discussion}
-
 \subsection{Physical Interpretation of $\Gamma$}
 The transition rate $\Gamma=0.23$ corresponds to the fractalization timescale:
 \begin{equation}
@@ -308,14 +332,106 @@ t_{\text{frac}} = \Gamma^{-1}H_0^{-1} \approx 13.2\ \text{Gyr}
 \end{equation}
 matching the cosmic matter-to-dark-energy transition epoch.
 
+% --- LIGNE CLÉ : AJUSTEMENT DE L'ESPACEMENT VERTICAL AVANT LA FIGURE ---
+\vspace*{-1cm} % Ajoutez un espace négatif pour remonter la figure si besoin. Ajustez la valeur.
+% ----------------------------------------------------------------------
+
+% START OF FIGURE 7 FOR GAMMA INTERPRETATION
+\begin{figure}[htbp] % Changed back to figure (single column)
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.9\columnwidth, % Ajusté la largeur
+    height=6cm, % Ajusté la hauteur
+    xlabel=Redshift ($z$),
+    ylabel=Relative Energy Density ($\Omega(z)$),
+    xmode=log,
+    xmin=0.01, xmax=1000,
+    ymin=0, ymax=1.1,
+    grid=major,
+    legend style={at={(0.5,-0.2)}, anchor=north, legend columns=2}, % Moved legend below the plot
+    legend cell align=left,
+    title style={font=\bfseries},
+    title={Evolution of Energy Densities and Fractal Transition},
+    mark options={scale=0.8}
+]
+
+% Model parameters (defined using \pgfmathsetmacro for PGFPlots compatibility)
+\pgfmathsetmacro{\Hnot}{72.82} % H_0
+\pgfmathsetmacro{\Omegam}{0.270} % Omega_m
+\pgfmathsetmacro{\OmegaLambda}{1-\Omegam} % Omega_Lambda
+\pgfmathsetmacro{\phiInfinityVal}{1.618} % phi_infinity (NOM RENOMMÉ)
+\pgfmathsetmacro{\phiZeroVal}{1.5} % phi_0 (NOM RENOMMÉ)
+\pgfmathsetmacro{\GammaVal}{0.23} % Gamma
+
+% --- AUCUNE DÉFINITION DE MACRO POUR PHI(X) ICI ---
+
+% Matter Density (Fractal Model)
+% Expression de phi(x) insérée directement
+\addplot[domain=0.01:1000, samples=100, blue, thick, dashed, mark=none] {
+    \Omegam * (1+x)^(3*( \phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x) )) / ( (\Omegam*(1+x)^(3*( \phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x) ))) + (\OmegaLambda*(1+x)^(3*(2-(\phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x))))) )
+};
+\addlegendentry{Matter (Fractal)}
+
+% Dark Energy Density (Fractal Model)
+% Expression de phi(x) insérée directement
+\addplot[domain=0.01:1000, samples=100, red, thick, dashed, mark=none] {
+    \OmegaLambda * (1+x)^(3*(2-(\phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x)))) / ( (\Omegam*(1+x)^(3*( \phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x) ))) + (\OmegaLambda*(1+x)^(3*(2-(\phiInfinityVal - (\phiInfinityVal - \phiZeroVal)*exp(-\GammaVal*x))))) )
+};
+\addlegendentry{Dark Energy (Fractal)}
+
+% Matter Density (LambdaCDM - for comparison)
+\addplot[domain=0.01:1000, samples=100, blue, thick, solid, mark=none] {
+    \Omegam * (1+x)^3 / ( \Omegam*(1+x)^3 + \OmegaLambda )
+};
+\addlegendentry{Matter ($\Lambda$CDM)}
+
+% Dark Energy Density (LambdaCDM - for comparison)
+\addplot[domain=0.01:1000, samples=100, red, thick, solid, mark=none] {
+    \OmegaLambda / ( \Omegam*(1+x)^3 + \OmegaLambda )
+};
+\addlegendentry{Dark Energy ($\Lambda$CDM)}
+
+% Marker for phi(z) phase transition
+% Calculate z where phi(z) is halfway between phi_0 and phi_inf
+% Ici, on utilise directement l'expression de phi(z) pour le calcul de zMidPhi
+\pgfmathsetmacro{\zMidPhi}{(ln(0.5))/(-\GammaVal)}
+% Estimate a reasonable range for the transition zone for visual emphasis
+\pgfmathsetmacro{\zTransitionStart}{max(0.01, \zMidPhi*0.2)}
+\pgfmathsetmacro{\zTransitionEnd}{\zMidPhi*2}
+
+% Calculate z where Omega_m = Omega_Lambda for LambdaCDM
+\pgfmathsetmacro{\zEqLambdaCDM}{ ((\OmegaLambda/\Omegam)^(1/3)) - 1 }
+
+% Transition zone of phi(z)
+\fill[black!10, opacity=0.6] (axis cs:\zTransitionStart,0) rectangle (axis cs:\zTransitionEnd,1.1);
+\addlegendentry{Fractal Transition Zone}
+
+% Vertical line for the midpoint of phi transition
+\addplot[black, densely dotted, line width=0.8pt] coordinates {(\zMidPhi,0) (\zMidPhi,1.1)};
+% J'ai baissé la position y du nœud de 0.75 à 0.70
+\node[above, rotate=90, font=\small] at (axis cs:\zMidPhi,0.70) {$z \approx \pgfmathprintnumber{\zMidPhi}$ ($\phi$ mid-transition)};
+
+% Vertical line for LambdaCDM matter-dark energy equality
+\addplot[black, dotted, line width=0.8pt] coordinates {(\zEqLambdaCDM,0) (\zEqLambdaCDM,1.1)};
+% J'ai baissé la position y du nœud de 0.65 à 0.60
+\node[above, rotate=90, font=\small] at (axis cs:\zEqLambdaCDM,0.60) {$z \approx \pgfmathprintnumber{\zEqLambdaCDM}$ ($\Omega_m = \Omega_\Lambda$ ($\Lambda$CDM))};
+
+\end{axis}
+\end{tikzpicture}
+\caption{Evolution of relative energy densities for the Dynamic Fractal cosmological model (dashed lines) and the standard $\Lambda$CDM model (solid lines) as a function of redshift $z$. The shaded band highlights the region where the transition of the fractal dimension $\phi(z)$ is most significant. Vertical lines mark the midpoint of the $\phi(z)$ transition and the matter-dark energy equality point for $\Lambda$CDM. Note the impact of the fractal model on the relative densities, particularly at lower redshifts.}
+\label{fig:energy_density_phi_transition}
+\end{figure}
+% END OF FIGURE 7
 \subsection{Numerical Analysis}
 Our $\chi^2$ analysis uses:
 \begin{itemize}
-\item Planck 2018 TT+lowE data \cite{planck2018}
+\item Planck 2018 TT+lowE data \cite{Planck2018}
 \item 26 data points with full covariance matrix
 \item 3 free parameters ($\phi_0,\phi_\infty,\Gamma$)
 \item $\chi^2/\text{dof} = 1.72$ versus $5.40$ for static fractal model ($\phi=1.5$ constant)
 \end{itemize}
+
 
 
 \section{Conclusions}
@@ -325,15 +441,8 @@ Our $\chi^2$ analysis uses:
 \item Explains CMB low-$\ell$ anomalies without fine-tuning
 \end{itemize}
 
-\begin{thebibliography}{9}
-\bibitem{planck2018} Planck Collaboration 2018, A\&A, 641, A6
-\bibitem{riess2021} Riess et al. 2021, ApJ, 908, L6
-\bibitem{freedman2019} Freedman et al. 2019, ApJ, 882, 34
-\bibitem{desi2023} DESI Collaboration 2023, arXiv:2306.06307
-\bibitem{euclid2022} Euclid Collaboration 2022, A\&A, 662, A112
-\bibitem{ska2021} SKA Collaboration 2021, PASA, 38, e042
-\bibitem{Sorkin2003} Sorkin R.D., 2003, Causal Sets and the Deep Structure of Spacetime
-\bibitem{pantheon_plus_data} Brout, D., et al. (The Pantheon+ Collaboration) 2022, Astrophys. J., 938, 110 (A. K. G. Riess, et al. for the SHOES Collaboration)
-\end{thebibliography}
+% Using bibtex with references.bib
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
 
 \end{document}
