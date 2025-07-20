@@ -7,8 +7,8 @@
     }
   ],
   "title": "Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model",
-  "version": "v1.2.0",
-  "description": "This repository contains the LaTeX source and compiled PDF for the research paper 'Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model'. We propose a complete fractal cosmological framework where the golden ratio $\\phi$ evolves dynamically from primordial ($\\phi_0=1.5$) to modern ($\\phi_\\infty=1.618$) epochs. This phase transition, characterized by a rate parameter $\\Gamma=0.23 \\pm 0.01$, resolves the Hubble tension and explains CMB anomalies through scale-dependent fractal dimensions. Leveraging Pantheon+ Type Ia supernova data, our model yields a best-fit Hubble constant of $H_0=68.74 \\pm 0.16$ km/s/Mpc, along with $\\Omega_m=0.297 \\pm 0.009$ and an absolute magnitude $M=-19.34 \\pm 0.01$ mag, demonstrating an excellent fit with $\\chi^2/\\text{dof}=1.00$. The model predicts: (1) BAO deviations $\\Delta r_d/r_d \\approx 0.15(1-e^{-z/2})$, (2) CMB power deficit $\\mathcal{S}=0.93 \\pm 0.02$ at $\\ell<30$ ($\\chi^2/\\text{dof}=1.72$ vs $5.40$ for static fractal model with $\\phi=1.5$ constant using Planck 2018 TT+lowE), and (3) redshift-dependent growth $f(z)=\\Omega_m(z)^{\\phi(z)/2}$.",
+  "version": "v1.3.0",
+  "description": "This repository contains the LaTeX source and compiled PDF for the research paper 'Dynamic Fractal Cosmology: A Fibonacci Phase Transition Model'. We propose a complete fractal cosmological framework where the golden ratio $\\phi$ evolves dynamically from primordial ($\\phi_0=1.5$) to modern ($\\phi_\\infty=1.618$) epochs. This phase transition, characterized by a rate parameter $\\Gamma=0.23 \\pm 0.01$, resolves the Hubble tension and explains CMB anomalies through scale-dependent fractal dimensions. Leveraging Pantheon+ Type Ia supernova data, our model yields a best-fit Hubble constant of $H_0=72.82 \\pm 0.16$ km/s/Mpc, along with $\\Omega_m=0.270 \\pm 0.065$ and an absolute magnitude $M=-19.38 \\pm 0.16$ mag, demonstrating an excellent fit with $\\chi^2/\\text{dof}=0.61$. The model predicts: (1) BAO deviations $\\Delta r_d/r_d \\approx 0.15(1-e^{-z/2})$, (2) CMB power deficit $\\mathcal{S}=0.93 \\pm 0.02$ at $\\ell<30$ ($\\chi^2/\\text{dof}=1.72$ vs $5.40$ for static fractal model with $\\phi=1.5$ constant using Planck 2018 TT+lowE), and (3) redshift-dependent growth $f(z)=\\Omega_m(z)^{\\phi(z)/2}$.",
   "keywords": [
     "cosmology",
     "fractal",
@@ -20,7 +20,9 @@
     "theoretical physics",
     "supernovae",
     "Pantheon+",
-    "cosmic expansion"
+    "cosmic expansion",
+    "Hubble diagram",
+    "H(z) evolution"
   ],
   "upload_type": "publication",
   "publication_type": "preprint",
